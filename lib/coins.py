@@ -798,3 +798,30 @@ class Einsteinium(Coin):
     IRC_PREFIX = "E_"
     IRC_CHANNEL = "#electrum-emc2"
     RPC_PORT = 41879
+
+class Vertcoin(Coin):
+    NAME = "Vertcoin"
+    SHORTNAME = "VTC"
+    NET = "mainnet"
+    XPUB_VERBYTES = bytes.fromhex("0488b21e")
+    XPRV_VERBYTES = bytes.fromhex("0488ade4")
+    P2PKH_VERBYTE = bytes.fromhex("47")
+    P2SH_VERBYTES = [bytes.fromhex("05")]
+    WIF_BYTE = bytes.fromhex("80")
+    GENESIS_HASH = ('4d96a915f49d40b1e5c2844d1ee2dccb'
+                    '90013a990ccea12c492d22110489f0c4')
+    DESERIALIZER = DeserializerSegWit
+    TX_COUNT = 2283528
+    TX_COUNT_HEIGHT = 714496
+    TX_PER_BLOCK = 3
+    IRC_CHANNEL = "#electrum-vtc"   # obsolete
+    IRC_PREFIX = None
+    RPC_PORT = 5888
+    REORG_LIMIT = 800
+    PEER_DEFAULT_PORTS = {'t': '55001', 's': '55002'}
+    PEERS = [
+        'fr1.vtconline.org s t',
+        'uk1.vtconline.org s t',
+        'useast1.vtconline.org s t',
+    ]
+    
